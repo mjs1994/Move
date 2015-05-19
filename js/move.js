@@ -28,7 +28,7 @@ jQuery.fn.move = function( options ) {
 		
 		if ( errors.length > 0 ) {
 			$.each( errors, function( key, val ) {
-				console.error('[MOVE.JS]: Please pass in a value for the ' + val + ' setting. Please visit the documentation for more info. (link)');
+				console.error('[MOVE.JS]: Please pass in a value for the ' + val + ' setting. Please visit the github repository for more info. https://github.com/michaelsmyth94/Move');
 			});
 			console.error('[MOVE.JS]: This plugin will not work without your options.');
 			return;
@@ -80,7 +80,6 @@ jQuery.fn.move = function( options ) {
 					
 					elementToMove[method]( settings.newLocation );
 					
-
 				} 
 				if ( width > settings.breakpoint && elementToMove.hasClass( settings.movedClass ) ) {
 
@@ -89,7 +88,6 @@ jQuery.fn.move = function( options ) {
 					
 					elementToMove[method]( settings.oldLocation );
 				
-
 				}
 
 			}
