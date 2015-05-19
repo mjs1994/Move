@@ -1,0 +1,46 @@
+/*  ==========================================================================
+	Move Demo
+	==========================================================================  */
+	
+.container {
+	max-width: 1120px;
+	margin: 0 auto;
+	width: auto;
+	padding: 0 20px;
+}
+	
+#header {
+	background: #222;
+	padding: 20px 0;
+	color: #fff;
+}
+#header h1 {
+	text-transform: uppercase;
+	font-size: 24px;
+	line-height: 24px;
+	margin: 0;
+}
+
+.content {
+	padding: 20px 0;
+}
+.content h2 {
+	font-size: 20px;
+	line-height: 20px;
+	margin: 0 0 20px 0;
+}
+.content figure {
+	margin: 0 0 20px 0;
+}
+.content .desc {
+	margin: 0 0 20px 0;
+}
+.content pre {
+	padding: 20px;
+	border: solid 2px #ccc;
+	background: #e9e9e9;
+}
+
+#documentation pre {
+	margin: 20px 0;
+}
