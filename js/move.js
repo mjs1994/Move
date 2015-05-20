@@ -1,4 +1,4 @@
-jQuery.fn.move = function( options ) {
+$.fn.move = function( options ) {
 	
 	var settings = {
 			breakpoint: null,
