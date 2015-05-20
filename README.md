@@ -1,6 +1,9 @@
 # Move
 Responsively move elements to different locations based on width breakpoints. 
 
+## Demo
+[Click here](http://michaelsmyth.co.uk/move/)
+
 ## Code Example
 ```
 $('#content .desc').move({
