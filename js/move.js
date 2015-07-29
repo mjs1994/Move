@@ -2,12 +2,12 @@ $.fn.move = function( options ) {
 	
 	var settings = {
 			breakpoint: null,
-			newLocation: null,
 			oldLocation: null,
+			newLocation: null,
 			movedClass: 'moved',
 			methods: {
-				down: 'appendTo',
-				up:   'appendTo'
+				o: 'appendTo',
+				n: 'appendTo'
 			}
 		};
 	
@@ -15,8 +15,8 @@ $.fn.move = function( options ) {
 		$.extend(settings, options);
 		var erroneousSettings = {
 				breakpoint: settings.breakpoint,
-				newLocation: settings.newLocation,
-				oldLocation: settings.oldLocation
+				oldLocation: settings.oldLocation,
+				newLocation: settings.newLocation
 			},
 			errors = [];
 		
@@ -38,13 +38,13 @@ $.fn.move = function( options ) {
 		return;
 	}
 	
-	if ( !validMethod( settings.methods.down ) ) {
-		console.error('[MOVE.JS]: Please enter a valid method for scaling down. Valid properties are: appendTo, prependTo, insertBefore, and insertAfter.');
+	if ( !validMethod( settings.methods.o ) ) {
+		console.error('[MOVE.JS]: Please enter a valid method for scaling up. Valid properties are: appendTo, prependTo, insertBefore, and insertAfter.');
 		return;
 	}
-	
-	if ( !validMethod( settings.methods.up ) ) {
-		console.error('[MOVE.JS]: Please enter a valid method for scaling up. Valid properties are: appendTo, prependTo, insertBefore, and insertAfter.');
+
+	if ( !validMethod( settings.methods.n ) ) {
+		console.error('[MOVE.JS]: Please enter a valid method for scaling down. Valid properties are: appendTo, prependTo, insertBefore, and insertAfter.');
 		return;
 	}
 	
@@ -75,7 +75,7 @@ $.fn.move = function( options ) {
 
 				if ( width <= settings.breakpoint && !elementToMove.hasClass( settings.movedClass ) ) {
 					
-					var method = settings.methods.down;
+					var method = settings.methods.n;
 					elementToMove.addClass( settings.movedClass );
 					
 					elementToMove[method]( settings.newLocation );
@@ -83,7 +83,7 @@ $.fn.move = function( options ) {
 				} 
 				if ( width > settings.breakpoint && elementToMove.hasClass( settings.movedClass ) ) {
 
-					var method = settings.methods.up;
+					var method = settings.methods.o;
 					elementToMove.removeClass( settings.movedClass );
 					
 					elementToMove[method]( settings.oldLocation );

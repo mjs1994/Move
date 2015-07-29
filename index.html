@@ -38,11 +38,11 @@
 					<h2>Initalise it like so</h2>
 					<pre>$('#content .desc').move({
 	breakpoint: 1000,
-	newLocation: '#content h2',
 	oldLocation: '#content .container',
+	newLocation: '#content h2',
 	methods: {
-		up:   'appendTo',
-		down: 'insertAfter'
+		o: 'appendTo',
+		n: 'insertAfter'
 	}
 });</pre>
 				
@@ -53,19 +53,19 @@
 				<div class="container clearfix">
 				
 					<h2>breakpoint:</h2>
-					<p style="margin-bottom: 10px;">Your width based breakpoint, eg. 1000.</p>
-					<p>Default: <strong>null</strong></p>
-					
-					<hr />
-					
-					<h2>newLocation:</h2>
-					<p style="margin-bottom: 10px;">The new location for the element to be moved to. eg '#content'.</p>
+					<p style="margin-bottom: 10px;">Your width based breakpoint, eg. <code>1000</code>.</p>
 					<p>Default: <strong>null</strong></p>
 					
 					<hr />
 					
 					<h2>oldLocation:</h2>
-					<p style="margin-bottom: 10px;">The old location for the element to be moved back to. eg '#content .container'.</p>
+					<p style="margin-bottom: 10px;">The old location for the element to be moved back to. eg <code>#content .container</code>.</p>
+					<p>Default: <strong>null</strong></p>
+
+					<hr />
+					
+					<h2>newLocation:</h2>
+					<p style="margin-bottom: 10px;">The new location for the element to be moved to. eg <code>#content</code>.</p>
 					<p>Default: <strong>null</strong></p>
 					
 					<hr />
@@ -73,10 +73,12 @@
 					<h2>methods:</h2>
 					<p>The methods jQuery will use for handling moving your element around the DOM.</p>
 					<pre>methods: {
-	up:   'insertAfter',
-	down: 'insertBefore'
+	o: 'insertAfter',
+	n: 'insertBefore'
 }</pre>
-					<p style="margin-bottom: 10px;">Default for up and down: <strong>appendTo</strong></p>
+					<p style="margin-bottom: 10px;">
+						Default for both <code>o</code> and <code>n</code>: <strong>appendTo</strong>, where <code>o</code> is the method for moving the element back to it's <strong>oldLocation</strong>, and <code>n</code> is the method for moving the element into it's <strong>newLocation</strong>.
+					</p>
 					<p>Valid properties: <strong>appendTo</strong>, <strong>prependTo</strong>, <strong>insertAfter</strong>, and <strong>insertBefore</strong>.</p>
 					
 				</div>
@@ -92,11 +94,11 @@
 				
 				$('#content .desc').move({
 					breakpoint: 600,
-					newLocation: '#content h2',
 					oldLocation: '#content .container',
+					newLocation: '#content h2',
 					methods: {
-						up:   'appendTo',
-						down: 'insertAfter'
+						o: 'appendTo',
+						n: 'insertAfter'
 					}
 				});
 				
