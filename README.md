@@ -30,6 +30,10 @@ Default: **null**
 The new location for the element to be moved to. eg `#content`.
 Default: **null**
 
+###onMove
+Callback function for when an element is moved. Returned parameters are the method to move, ie `newLocation` or `oldLocation`, and the element that was moved. eg. `function(method, element) {}`.
+Default: **null**
+
 ###methods
 The methods jQuery will use for handling moving your element around the DOM.
 ```
