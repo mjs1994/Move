@@ -10,6 +10,14 @@ $('#content .desc').move({
 	breakpoint: 1000,
 	oldLocation: '#content .container',
 	newLocation: '#content h2',
+	onMove: function(method, element) {
+		if (method == 'oldLocation') {
+			console.log('Moved back!');
+		}
+		if (method == 'newLocation') {
+			console.log('Moved to new location!');
+		}
+	},
 	methods: {
 		o: 'appendTo',
 		n: 'insertAfter'
