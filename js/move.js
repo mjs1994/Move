@@ -3,7 +3,7 @@
  */
 (function($) {
   /**
-   * Create the Filtron plugin.
+   * Create the Move plugin.
    */
   $.fn.move = function(options) {
     var settings = {
