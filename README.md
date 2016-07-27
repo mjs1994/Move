@@ -1,8 +1,8 @@
 # Move
-Responsively move elements to different locations based on width breakpoints. 
+Responsively move elements to different locations based on width breakpoints.
 
 ## Demo
-[Click here](http://michaelsmyth.co.uk/move/)
+[Click here](http://michaelsmyth.co.uk/demo/move/)
 
 ## Code Example
 ```
