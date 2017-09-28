@@ -14,7 +14,6 @@ export default {
   globals: {
     jquery: '$'
   },
-  sourcemap: 'inline',
   plugins: [
     eslint(),
     babel({
