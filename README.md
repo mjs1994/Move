@@ -1,5 +1,10 @@
 # Move
-Responsively move elements to different locations based on width breakpoints.
+Responsively move elements to different locations based on width breakpoints. Re-written using ES6 and compiled/bundled using [rollup.js](https://rollupjs.org/).
+
+## Contributing
+1. Clone the repository.
+2. Run `npm install && npm run dev`.
+3. Have fun and submit a PR!
 
 ## Demo
 [Click here](http://michaelsmyth.co.uk/demo/move/)
@@ -26,23 +31,23 @@ $('#content .desc').move({
 ```
 
 ## Options
-###breakpoint
+### breakpoint
 Your width based breakpoint, eg. `1000`.
 Default: **null**
 
-###oldLocation
+### oldLocation
 The old location for the element to be moved back to. eg `#content .container`.
 Default: **null**
 
-###newLocation
+### newLocation
 The new location for the element to be moved to. eg `#content`.
 Default: **null**
 
-###onMove
+### onMove
 Callback function for when an element is moved. Returned parameters are the method to move, ie `newLocation` or `oldLocation`, and the element that was moved. eg. `function(method, element) {}`.
 Default: **null**
 
-###methods
+### methods
 The methods jQuery will use for handling moving your element around the DOM.
 ```
 methods: {

@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Move Demo</title>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <style>
+      html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i,
+      dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu,
+      nav, section, summary, time, mark, audio, video, main { margin:0; padding:0; border:0; outline:0; font-size:100%; vertical-align:baseline; background:transparent; }
+      article, aside, details, figcaption, figure, footer, header, hgroup, nav, section, summary, main { display: block; }
+      audio, canvas, video { display: inline-block; *display: inline; *zoom: 1; }
+      audio:not([controls]) { display: none; }
+      [hidden] { display: none; }
+      html { font-size: 100%; overflow-y: auto; -webkit-text-size-adjust: 100%; -ms-text-size-adjust: 100%; }
+      body { margin: 0; }
+      h1, h2, h3, h4, h5, h6 { font-weight:normal; }
+      a { color:blue; }
+      a:focus { outline: thin dotted; }
+      a:active, a:hover { outline: 0; }
+      li { list-style:none; }
+      abbr[title] { border-bottom:none; }
+      b, strong { font-weight: 700; }
+      i, em, dfn { font-style: italic; }
+      hr { display: block; height: 1px; border: 0; border-top: 1px solid #ccc; margin: 1em 0; padding: 0; }
+      ins { background: #ff9; color: #000; text-decoration: none; }
+      mark { background: #ff0; color: #000; font-style: italic; font-weight: bold; }
+      pre, code, kbd, samp { font-family: monospace, monospace; _font-family: 'courier new', monospace; }
+      pre { white-space: pre; white-space: pre-wrap; word-wrap: break-word; }
+      q { quotes: none; }
+      q:before, q:after { content: ""; content: none; }
+      small { font-size: 85%; }
+      sub, sup { font-size: 75%; line-height: 0; position: relative; vertical-align: baseline; }
+      sup { top: -0.5em; }
+      sub { bottom: -0.25em; }
+      img { vertical-align: middle; height: auto; border: 0; -ms-interpolation-mode: bicubic; vertical-align: middle; max-width: 100%; }
+      label { cursor: pointer; }
+      button, input, select, textarea { font-size: 100%; margin: 0; vertical-align: baseline; *vertical-align: middle; font-family: inherit; }
+      button, input { line-height: normal; *overflow: visible; }
+      button, input[type="button"], input[type="reset"], input[type="submit"] { cursor: pointer; -webkit-appearance: button; }
+      input[type="checkbox"], input[type="radio"] { box-sizing: border-box; padding: 0; }
+      input[type="search"] { -webkit-appearance: textfield; -moz-box-sizing: content-box; -webkit-box-sizing: content-box; box-sizing: content-box; }
+      input[type="search"]::-webkit-search-decoration	{ -webkit-appearance: none; }
+      button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+      textarea { overflow: auto; vertical-align: top; resize: vertical; }
+      table { border-collapse: collapse; border-spacing: 0; }
+      td { vertical-align: top; }
+      html,button,input,select,textarea {color: #222}
+      body {font-size: 1em;line-height: 1.4;}
+      ::-moz-selection {background: #b3d4fc;text-shadow: none}
+      ::selection {background: #b3d4fc;text-shadow: none}
+      hr {display: block;height: 1px;border: 0;border-top: 1px solid #ccc;margin: 1em 0;padding: 0}
+      fieldset {border: 0;margin: 0;padding: 0}
+      textarea {resize: vertical;}
+      .chromeframe {margin: 0.2em 0;background: #ccc;color: #000;padding: 0.2em 0}
+      .ir {background-color: transparent;border: 0;overflow: hidden;*text-indent: -9999px}
+      .ir:before {content: "";display: block;width: 0;height: 150%}
+      .hidden {display: none !important;visibility: hidden;}
+      .visuallyhidden {border: 0;clip: rect(0 0 0 0);height: 1px;margin: -1px;overflow: hidden;padding: 0;position: absolute;width: 1px}
+      .visuallyhidden.focusable:active,
+      .visuallyhidden.focusable:focus {clip: auto;height: auto;margin: 0;overflow: visible;position: static;width: auto}
+      .invisible {visibility: hidden}
+      .clearfix:before,
+      .clearfix:after {content: " ";display: table}
+      .clearfix:after {clear: both}
+      .clearfix {*zoom: 1}
+      .group:after { display:block; height:0; clear:both; content:"."; visibility:hidden; }
+      code, kbd, pre, samp { font-family: monospace, serif; font-size: 14px; -webkit-hyphens: none; -moz-hyphens: none; -ms-hyphens: none; hyphens: none; }
+      button::-moz-focus-inner, input::-moz-focus-inner { border: 0; padding: 0; }
+      * { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+      .container {
+      	max-width: 1120px;
+      	margin: 0 auto;
+      	width: auto;
+      	padding: 0 20px;
+      }
+
+      #header {
+      	background: #222;
+      	padding: 20px 0;
+      	color: #fff;
+      }
+      #header h1 {
+      	text-transform: uppercase;
+      	font-size: 24px;
+      	line-height: 24px;
+      	margin: 0;
+      }
+
+      .content {
+      	padding: 20px 0;
+      }
+      .content h2 {
+      	font-size: 20px;
+      	line-height: 20px;
+      	margin: 0 0 20px 0;
+      }
+      .content figure {
+      	margin: 0 0 20px 0;
+      }
+      .content .desc {
+      	margin: 0;
+      }
+      .content .desc.moved {
+        margin: 0 0 20px 0;
+      }
+      .content pre {
+      	padding: 20px;
+      	border: solid 2px #ccc;
+      	background: #e9e9e9;
+      }
+
+      #documentation pre {
+      	margin: 20px 0;
+      }
+
+      code {
+      	border: solid 2px #ccc;
+      	background: #e9e9e9;
+      	padding: 3px 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="page">
+      <header id="header" role="banner">
+        <div class="container clearfix">
+          <h1>Move Demo</h1>
+        </div>
+      </header>
+
+      <section id="content"  class="content" role="main">
+        <div class="container clearfix">
+          <h2>This is a demo of move.js</h2>
+          <figure>
+            <img src="http://placehold.it/1120x600" alt="Placeholder"/>
+          </figure>
+          <p class="desc">This image description will be moved above the image when the browser is resized under 600px! Try resizing your browser.</p>
+        </div>
+      </section>
+
+      <section id="code" class="content">
+        <div class="container clearfix">
+          <h2>Initalise it like so</h2>
+          <pre>$('#content .desc').move({
+  breakpoint: 1000,
+  oldLocation: '#content .container',
+  newLocation: '#content h2',
+  onMove: function(method, element) {
+    if (method == 'oldLocation') {
+      console.log('Moved back!');
+    }
+    if (method == 'newLocation') {
+      console.log('Moved to new location!');
+    }
+  },
+  methods: {
+    o: 'appendTo',
+    n: 'insertAfter'
+  }
+});</pre>
+        </div>
+      </section>
+
+      <section id="documentation" class="content">
+        <div class="container clearfix">
+          <h2>breakpoint:</h2>
+          <p style="margin-bottom: 10px;">Your width based breakpoint, eg. <code>1000</code>.</p>
+          <p>Default: <strong>null</strong></p>
+
+          <hr />
+
+          <h2>oldLocation:</h2>
+          <p style="margin-bottom: 10px;">The old location for the element to be moved back to. eg <code>#content .container</code>.</p>
+          <p>Default: <strong>null</strong></p>
+
+          <hr />
+
+          <h2>newLocation:</h2>
+          <p style="margin-bottom: 10px;">The new location for the element to be moved to. eg <code>#content</code>.</p>
+          <p>Default: <strong>null</strong></p>
+
+          <hr />
+
+          <h2>onMove:</h2>
+          <p style="margin-bottom: 10px;">Callback function for when an element is moved. Returned parameters are the method to move, ie <code>newLocation</code> or <code>oldLocation</code>, and the element that was moved. eg. <code>function(method, element) {}</code>.</p>
+          <p>Default: <strong>null</strong></p>
+
+          <hr />
+
+          <h2>methods:</h2>
+          <p>The methods jQuery will use for handling moving your element around the DOM.</p>
+          <pre>methods: {
+  o: 'insertAfter',
+  n: 'insertBefore'
+}</pre>
+          <p style="margin-bottom: 10px;">
+            Default for both <code>o</code> and <code>n</code>: <strong>appendTo</strong>, where <code>o</code> is the method for moving the element back to it's <strong>oldLocation</strong>, and <code>n</code> is the method for moving the element into it's <strong>newLocation</strong>.
+          </p>
+          <p>Valid properties: <strong>appendTo</strong>, <strong>prependTo</strong>, <strong>insertAfter</strong>, and <strong>insertBefore</strong>.</p>
+        </div>
+      </section>
+
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="../dist/move.min.js"></script>
+    <script>
+      jQuery(document).ready(function($) {
+        $('#content .desc').move({
+          breakpoint: 600,
+          oldLocation: '#content .container',
+          newLocation: '#content h2',
+          onMove: function(method, element) {
+            console.log(element);
+            if (method == 'oldLocation') {
+              console.log('Moved back to old location!');
+            }
+            if (method == 'newLocation') {
+              console.log('Moved to new location!');
+            }
+          },
+          methods: {
+            o: 'appendTo',
+            n: 'insertAfter'
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
