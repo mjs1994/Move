@@ -1,5 +1,5 @@
 {
-  "name": "move",
+  "name": "jq-move",
   "version": "2.0.0",
   "description": "Responsively move elements to different locations based on width breakpoints.",
   "author": "Michael Smyth <me@michaelsmyth.co.uk> (https://michaelsmyth.co.uk/)",
